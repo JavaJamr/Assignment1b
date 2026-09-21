@@ -1,0 +1,130 @@
+<html>
+    <!--Header Section-->
+    <header>
+
+        <span>
+            <p>Logo</p>
+            <p>brand Name</p>
+        </span>
+    <nav>
+        <a>Compare Prices</a>
+        <a>Simulation</a>
+        <a>Start Now CTA (Sends to buy button/simulation)</a>
+    </nav>
+    </header>
+
+    <main>
+        <!--Hero-->
+        <section> 
+            <div>
+
+                <h2>Latency Tracking</h2>
+                <p>Latency desc</p>
+
+                <h2>Log Aggregation</h2>
+                <p>Latency desc</p>
+
+                <h2>Auto-Remediation</h2>
+                <p>Latency desc</p>
+            </div>
+            <a>Start Now CTA (Sends to buy button/simulation)</a>
+
+        </section>
+<!--Compare Prices Div-->
+        <div> 
+            <article>
+                <h2>Developer</h2>
+                <p>Pricing Range</p>
+
+                <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                </ul>  
+                
+                <a>buy button/simulation </a>
+            </article> 
+
+            <article> 
+                <h2>Pro Cluster</h2>
+                <p>Pricing Range</p>
+
+                <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                    <li>Feature 3</li>
+                </ul>
+
+                <a>buy button/simulation</a>
+            </article>
+
+            <article>
+                <h2>Enterprise Dedicated</h2>
+                <p>Pricing Range</p>
+
+                <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                    <li>Feature 3</li>
+                    <li>Feature 4</li>
+                </ul>
+
+                <a>buy button/simulation</a>
+            </article>
+        </div>
+    
+        <!--buy button/simulation-->
+        <section>
+             <form action="#" method="post" class="lead-form">
+
+                <label for="number-of-nodes" class="form-label">Number Of Nodes<span class="required-mark">*</span></label>
+                    <!--id is corrosponds to the form labels "for". name is the label the server will see-->
+                    <input
+                    type="number"
+                    name="numeberOfNodes"
+                    id="number-of-nodes"
+                    class="form-control"
+                    min="1"
+                    max="1000000"
+                    step="1"
+                    placeholder="100"
+                    required>
+                    <span class="input-hint">min: 1 Node - max: 1,000,000 Nodes</span>
+
+                <label for="throughput" class="form-label">throughput in kbit/s<span class="required-mark">*</span></label>
+                    <!--id is corrosponds to the form labels "for". name is the label the server will see-->
+                    <input
+                    type="number"
+                    name="throughput"
+                    id="throughput"
+                    class="form-control"
+                    min="500"
+                    max="100000000"
+                    step="500"
+                    placeholder="10000"
+                    required>
+                    <span class="input-hint">min: 500KB/s (Half a megabyte) Node - max: 100,000,000,000 KB/s (100 Terra Bytes)</span>
+
+                <label for="service-tier" class="form-label">Target Tier Selection</label>
+                    <select name="serviceTier" id="service-tier" class="form-control">
+                        <option value="developer">Developer</option>
+                        <option value="pro-cluster">Pro Cluster</option>
+                        <option value="enterprise-dedicated">Enterprise Dedicated</option>
+                    </select>
+            </form>
+
+        </section>
+    </main>
+    <!--Footer Section-->
+    <footer>
+        <span>
+            <p> Logo</p>
+            <p> brand name</p>
+            <nav>
+                <a> Back To Top</a>
+                <a> Compare Prices</a>
+                <a> buy button/simulation</a>
+                <a> buy button/simulation CTA</a>
+            </nav>
+        </span>
+    </footer>
+    
