@@ -1,0 +1,28 @@
+
+/*Put Future Variables Here*/
+:root{
+    --font-family: -apple-systems, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+
+}
+
+/* Reset Browser Styling*/
+*, *::before, *::after{
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+
+/*CSS Will Go Here*/
+html{
+
+    .header-site{
+
+    }
+    .main-site{
+
+    }
+    .footer-site{
+
+    }
+}
