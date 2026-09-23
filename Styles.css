@@ -2,7 +2,16 @@
 /*Put Future Variables Here*/
 :root{
     --font-family: -apple-systems, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-
+    --button: #383d46;
+    --button-hover:#505765;
+    --button-CTA: #355691;
+    --button-CTA-hover: #368F8B;
+    --hero-background: #F3DFC1;
+    --features-background: #CBBFBB;
+    --header-footer:#1F314D;
+    --primary-text: #090C08;
+    --main-background: #ffd698;
+    --transition-speed:.2;
 }
 
 /* Reset Browser Styling*/
@@ -15,14 +24,97 @@ margin: 0;
 
 /*CSS Will Go Here*/
 html{
+    scroll-behavior: smooth;
+    font-family: var(--font-family);
+    background-color: var(--main-background);
+    color: var(--primary-text); /*Saves repeated calls to change text color by having a default*/
+    /*Text Font Color*/
+    line-height: 1.6;
 
-    .header-site{
+    /*Buttons*/
+    .btn{
+        background-color: var(--button);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color:var(--primary-text);
 
+        padding:.75rem .65rem;
+        font-size: 1rem;
+        font-weight: 600; /*Bold is weight*/    
+        text-decoration: none; /*Removes default styling*/
+        border-radius: 2px; /*Curvyness 50% is circle*/
+        border: 1px solid;
+        border-color: transparent; /*Transparent is not visible border*/
+        cursor: pointer;
+
+        transition: background-color var(--transition-speed), transform var(--transition-speed),border-color var(--border-color); 
+    }
+    .btn:hover{
+        color:var(--primary-text);
+        display: inline-flex;
+        background-color: var(--button-hover);
+        transform: translateY(-1px);
+    }
+    .CTA{
+        color:var(--primary-text);
+        display: inline-flex;
+        background-color: var(--button-CTA);
+    }
+    .CTA:hover{
+        color:var(--primary-text);
+        display: inline-flex;
+        background-color: var(--button-CTA-hover);
+        transform: translateY(-1px);
+    }
+    .site-header{
+        width: 100%; /*Fills enitre screen*/
+        display: inline-flex; /*Always apply to parent so the children will follow*/
+        position: sticky;        
+        z-index: 1000; /*Z axis is important for layering*/
+        
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 1rem 2rem;
+        /*RGB colors 0-255,0-255,0-255 aplha is 0-1 (Invisible-Solide through Decimals)*/
+        background-color: var(--header-footer);
+        border-bottom: 1px solid var(--border-color);
+    }
+    .header-nav{
+        justify-self: right;
     }
     .main-site{
-
+        display: flex; /*Always apply to parent so the children will follow*/
+        position: sticky;
+        display: inline-flex;
+        align-items: center;
+        background-color:var(---main-background);
+    }
+    .hero{
+        display: flex; /*Always apply to parent so the children will follow*/
+        position: sticky;
+        display: inline-flex;
+        align-items: center;
+        background-color:var(--hero-background);
+    }
+    .features{
+        background-color:var(--features-background);
     }
     .footer-site{
-
+        background-color:var(--header-footer);
     }
+ .brand-logo{
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color:var(--primary-text);
+    }
+
+/*Unused Classes:
+Header Nav
+Footer Nav*/
 }
