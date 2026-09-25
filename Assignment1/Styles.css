@@ -1,37 +1,215 @@
-
-/*Put Future Variables Here*/
-:root{
-    --font-family: -apple-systems, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-    --button: #383d46;
-    --button-hover:#505765;
-    --button-CTA: #355691;
-    --button-CTA-hover: #368F8B;
-    --hero-background: #F3DFC1;
-    --features-background: #CBBFBB;
-    --header-footer:#1f314d;
-    --primary-text: #090C08;
-    --main-background: #ffd698;
-    --transition-speed:.2;
+/*Initial Set Up*/
+    :root{
+        --font-family: -apple-systems, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        --button: #383d46;
+        --button-hover:#505765;
+        --button-CTA: #355691;
+        --button-CTA-hover: #368F8B;
+        --hero-background: #F3DFC1;
+        --features-background: #CBBFBB;
+        --header-footer:#1f314d;
+        --primary-text: #090C08;
+        --border-color: rgba(0, 192, 235, 0.6);
+        --main-background: #ffd698;
+        --transition-speed:.2;
+    }
+    *, *::before, *::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-/* Reset Browser Styling*/
-*, *::before, *::after{
-box-sizing: border-box;
-padding: 0;
-margin: 0;
+
+                                                        /*Sections Below*/
+
+
+/*html Section*/
+    html{
+        scroll-behavior: smooth;
+        font-family: var(--font-family);
+        background-color: var(--main-background);
+        color: var(--primary-text); /*Saves repeated calls to change text color by having a default*/
+        /*Text Font Color*/
+        line-height: 1.6;
+    }
+
+/*Header Section*/
+    .brand-logo{
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-decoration: none;
+        display: flex;
+        gap: .5rem;
+        color:var(--primary-text);
+    }
+    .site-header{
+        width: 100%; /*Fills enitre screen*/
+        display: inline-flex; /*Always apply to parent so the children will follow*/
+        position: sticky;      
+        top:0;  
+        z-index: 1000; /*Z axis is important for layering*/    
+        justify-content: space-between;
+        align-items: center;
+        
+        background-color: var(--header-footer);
+        padding: 1rem 0;
+        border: 1px solid var(--primary-text);
+    }
+
+/*Main Section*/
+    .main-site{
+        display: flex; /*Always apply to parent so the children will follow*/
+        position: sticky;
+        display: inline-flex;
+        align-items: center;
+        background-color:var(---main-background);
+    }
+
+/*Hero Section*/
+    .hero-section{
+        display: flex; /*Always apply to parent so the children will follow*/
+        align-items: center;
+        background-color:var(--hero-background);
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 5rem 0;
+    }
+    .hero-title{
+        display: flex;
+        align-items: center;
+        background-color:var(--hero-background);
+
+    }
+    .hero-information{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;/*Changes direction and due to divs becomes mroe like article*/
+        align-items: center;
+    }
+    .hero-text{
+        padding: 1rem 3rem;
+        border-radius: 3px var(--button);
+        border: 2px solid var(--border-color);
+        margin: 3rem;
+    }
+    .hero-button{
+        align-items: center;
+    }
+
+/*Features Section Of The Page*/
+    .features-section{
+        display: flex;
+        justify-content: space-evenly;
+        background-color:var(--features-background);
+        border: 3px solid var(--border-color);
+        padding: 3rem 0;
+    }
+    .features-card{
+        background-color: var(--button-hover);
+        padding: 2.5rem 2rem;
+        border-radius: 8px;
+        display: flex;
+        
+        flex-direction: column;
+        position: relative;  /*position lets you hold the location of a value*/
+        transition: transform var(--transition-speed);
+    }
+    .features-card.recommended{
+        background-color: var(--button-CTA);
+        padding: 2.5rem 2rem;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        position: relative;  /*position lets you hold the location of a value*/
+        transform: scale(1.03);
+        transition: transform var(--transition-speed);
+    }
+    .features-card:hover{
+        transform: translateY(-4px);
+        border-color: var(--primary-text);
+        border:1px solid var(--primary-text);
+    }
+    .features-card li{ /*if there is a li inside of tier features is whitespace. Greater than is the direct descendent*/ 
+        font-style: none;
+        padding: 0.5rem 0;
+        font-size: .9rem;
+    }
+    .popular-tag{
+        position: absolute; /*Absolute to the relative position the parent has*/
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--primary);
+        color: #FFF;
+        font-size: 0.5rem;
+        font-weight: 700px;
+        padding: .2rem .75rem;
+        border-radius: 9999px;
+        text-transform: uppercase;
+    }
+
+/*Footer Syling*/
+    .footer-site{
+        width: 100%; /*Fills enitre screen*/
+        display: inline-flex; /*Always apply to parent so the children will follow*/
+        z-index: 1000; /*Z axis is important for layering*/
+        
+        justify-content: space-between;
+
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: .75rem 0 0 0;
+    }
+    .header-footer-nav{
+        justify-self: right;
+        margin: 0 .5rem;
+    }
+/*Form Section*/
+.form-title{
+    align-content: center;
+    padding: 3rem 0;
+    font-weight: 800;
+}
+.form-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: left;
+    flex-direction: column;
+    border: 5px solid var(--primary-text);
+    padding: 0 0 6rem 0;
+    margin: 3rem 24rem;
+}
+.form-label{
+    font-size: 20px; 
+    margin: 2rem 3rem 0 3rem;
+
+}
+.question-answer{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: left;
+}
+.form-control{
+    display: flex;
+    justify-content: space-evenly;
+}
+.input-hint{
+    margin: 0 0 2rem 0;
+    align-content: left;  
+    font-size: 10px;
+}
+.form-buttons{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    margin: 2rem 4rem;
 }
 
 
-/*CSS Will Go Here*/
-html{
-    scroll-behavior: smooth;
-    font-family: var(--font-family);
-    background-color: var(--main-background);
-    color: var(--primary-text); /*Saves repeated calls to change text color by having a default*/
-    /*Text Font Color*/
-    line-height: 1.6;
 
-    /*Buttons*/
+
+
+
+/*Buttons*/
     .btn{
         background-color: var(--button);
         display: inline-flex;
@@ -54,6 +232,7 @@ html{
         color:var(--primary-text);
         display: inline-flex;
         background-color: var(--button-hover);
+        border:1px solid var(--primary-text);
         transform: translateY(-1px);
     }
     .CTA{
@@ -65,70 +244,14 @@ html{
         color:var(--primary-text);
         display: inline-flex;
         background-color: var(--button-CTA-hover);
+        border:1px solid var(--primary-text);
         transform: translateY(-1px);
     }
-    .site-header{
-        width: 100%; /*Fills enitre screen*/
-        display: inline-flex; /*Always apply to parent so the children will follow*/
-        position: sticky;      
-        top:0;  
-        z-index: 1000; /*Z axis is important for layering*/
-        
-        justify-content: space-between;
-        align-items: center;
 
-        padding: 1rem 2rem;
-        /*RGB colors 0-255,0-255,0-255 aplha is 0-1 (Invisible-Solide through Decimals)*/
-        background-color: var(--header-footer);
-        border-bottom: 1px solid var(--border-color);
+/*Universal styling options*/
+    .section-header{
+        flex: grid;
+        text-align: center;
+        margin-bottom: 3rem;
+        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
     }
-    .header-nav{
-        justify-self: right;
-    }
-    .main-site{
-        display: flex; /*Always apply to parent so the children will follow*/
-        position: sticky;
-        display: inline-flex;
-        align-items: center;
-        background-color:var(---main-background);
-    }
-    .hero{
-        display: flex; /*Always apply to parent so the children will follow*/
-        position: sticky;
-        display: inline-flex;
-        align-items: center;
-        background-color:var(--hero-background);
-    }
-    .features{
-        background-color:var(--features-background);
-    }
-    .footer-site{
-        width: 100%; /*Fills enitre screen*/
-        display: inline-flex; /*Always apply to parent so the children will follow*/
-        z-index: 1000; /*Z axis is important for layering*/
-        
-        justify-content: space-between;
-        align-items: center;
-
-        padding: 1rem 2rem;
-        /*RGB colors 0-255,0-255,0-255 aplha is 0-1 (Invisible-Solide through Decimals)*/
-        background-color: var(--header-footer);
-        border-bottom: 1px solid var(--border-color);
-    }
- .brand-logo{
-    font-size: 1.25rem;
-    font-weight: 700;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    color:var(--primary-text);
-    }
-
-/*Unused Classes:
-Header Nav
-Footer Nav
-
-UPLOAD ROOT FILE TO GITHUB
-*/
-}

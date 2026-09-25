@@ -13,8 +13,8 @@
     <header id="header" class="site-header">
         <!--Defines Logo-->
         <a href="#" class="brand-logo" aria-label="Cloud Symbol">
-        <span class="logo-icon">&#128039</span>Product Name</a>
-        <nav class="header-nav">
+        <span class="logo-icon">&#9925</span>Product Name</a>
+        <nav class="header-footer-nav">
             <a href="#features" class="btn">Compare Prices</a>
             <a href="#pricing"class="btn">Simulation</a>
             <a href="#pricing" class="btn CTA">Start Now CTA (Sends to buy button/simulation)</a>
@@ -28,28 +28,27 @@
             <h1 class="hero-title">Some Title</h1>
             <!--This many divs for the needed effect-->
             <section class="hero-information">
-                <div class="hero-text-box">
+                <div class="hero-text">
                     <h2>Latency Tracking</h2>
                     <p>Latency desc</p>
                 </div>
                 
-                <div class="hero-text-box">
+                <div class="hero-text">
                     <h2>Log Aggregation</h2>
                     <p>Latency desc</p>
                 </div>
                 
-                <div class="hero-text-box">
+                <div class="hero-text">
                     <h2>Auto-Remediation</h2>
-                <p>Latency desc</p>
+                    <p>Latency desc</p>
                 </div>
-                
-            </section>
-            <a href="#pricing" class="btn CTA">Start Now</a>
 
+            </section>
+        <a href="#pricing" class="btn CTA hero-button">Start Now</a> 
         </section>
 <!--Compare Prices Div-->
-        <section id="features" class="section-container"> 
-            <article class="pricing-card">
+        <section id="features" class="section-header features-section"> 
+            <article class="features-card">
                 <h2>Developer</h2>
                 <p>Pricing Range</p>
 
@@ -61,7 +60,8 @@
                 <a href="#pricing" class="btn CTA">Buy Now</a>
             </article> 
 
-            <article class="pricing-card-featured"> 
+            <article class="features-card highlighted"> 
+                <div class="popular-tag">Most Popular</div>
                 <h2>Pro Cluster</h2>
                 <p>Pricing Range</p>
 
@@ -74,7 +74,7 @@
                 <a href="#pricing" class="btn CTA">Buy Now</a>
             </article>
 
-            <article class="pricing-card">
+            <article class="features-card">
                 <h2>Enterprise Dedicated</h2>
                 <p>Pricing Range</p>
 
@@ -90,14 +90,17 @@
         </section>
     
         <!--buy button/simulation-->
-        <section id="pricing" class="section-container">
-             <form action="#" method="post" class="lead-form">
+        <section id="pricing" class="section-header">
 
-                <label for="number-of-nodes" class="form-label">Number Of Nodes<span class="required-mark">*</span></label>
+             <form action="#" method="post" class="form-wrapper">
+                <h3 class="form-title">Form Title</h3>
+
+                <div class="question-answer">
+                <label for="number-of-nodes" class="form-label">Number Of Nodes*</label>
                     <!--id is corrosponds to the form labels "for". name is the label the server will see-->
                     <input
                     type="number"
-                    name="numeberOfNodes"
+                    name="numberOfNodes"
                     id="number-of-nodes"
                     class="form-control"
                     min="1"
@@ -105,9 +108,11 @@
                     step="1"
                     placeholder="100"
                     required>
+                </div>
                     <span class="input-hint">min: 1 Node - max: 1,000,000 Nodes</span>
 
-                <label for="throughput" class="form-label">throughput in kbit/s<span class="required-mark">*</span></label>
+                <div class="question-answer">
+                <label for="throughput" class="form-label">Throughput in kbit/s*</label>
                     <!--id is corrosponds to the form labels "for". name is the label the server will see-->
                     <input
                     type="number"
@@ -119,34 +124,40 @@
                     step="500"
                     placeholder="10000"
                     required>
+                </div>
                     <span class="input-hint">min: 500KB/s (Half a megabyte) Node - max: 100,000,000,000 KB/s (100 Terra Bytes)</span>
-
+                
+                <div class="question-answer">
                 <label for="service-tier" class="form-label">Target Tier Selection</label>
                     <select name="serviceTier" id="service-tier" class="form-control">
                         <option value="developer">Developer</option>
                         <option value="pro-cluster">Pro Cluster</option>
                         <option value="enterprise-dedicated">Enterprise Dedicated</option>
                     </select>
+                </div>  
+                
+            <!--Submission Buttons-->
+            <div class="form-buttons">
+                <button class="btn">Simulate</button>
+                <button class="btn CTA">Buy Now</button>
+            </div>
             </form>
 
+            
         </section>
     </main>
     <!--Footer Section-->
-    <footer class="footer-nav">
+    <footer class="footer-site">
         <!--May change to be different than header-->
             <a href="#" class="brand-logo" aria-label="Cloud Symbol">
-            <span class="logo-icon">&#128039</span>Product Name</a>
-
-            <!--hero is the name of the hero section
-            features is the name of the 3 articles section
-            pricing is the name of the form with the simulation and buy menu (Not implemented)-->
-            <nav> 
+            <span class="logo-icon">&#9925</span>Product Name</a>
+            <nav class="header-footer-nav"> 
                 <a href="#hero">Back To Top</a>
                 <a href="#features">Compare Prices</a>
                 <a href="#pricing">Simulation</a>
                 <a href="#pricing" class="btn CTA">Buy Now</a>
-                
             </nav>
+            
        
     </footer>
     
