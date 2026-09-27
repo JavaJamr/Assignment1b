@@ -91,13 +91,18 @@
         display: flex;
         justify-content: space-around;
         flex-direction: row;/*Changes direction and due to divs becomes mroe like article*/
-        align-items: center;
+        
     }
     .hero-text{
         padding: 1rem 3rem;
         border-radius: 3px var(--button);
         border: 2px solid var(--border-color);
         margin: 3rem;
+        height: auto;
+        width: 30%;
+    }
+    .hero-text h2{
+        align-items: center;
     }
     .hero-button{
         align-items: center;
@@ -110,14 +115,12 @@
         gap: 8rem;
         align-items: stretch; /*on the cross axis it will pull the content and stretch it over all the space to fill the box*/
         background-color:var(--features-background);
-        border-top: 3px solid var(--border-color);
-        border-bottom: 3px solid var(--border-color);
         padding: 2.5rem;
     }
     .features-card{
         background-color: var(--button-hover);
         padding: 2.5rem 2rem;
-        border-radius: 8px;
+        border-radius: 8px solid var(--primary-text);
         display: flex;
         
         flex-direction: column;
@@ -139,27 +142,25 @@
         border-color: var(--primary-text);
         border:1px solid var(--primary-text);
     }
+    .features-card ul{ /*Using a more subtle seperation instead of changing the dots to something else*/
+        align-content: left;
+        padding: 0.9rem .9rem;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        height: 20rem;
+    }
     .features-card li{ /*if there is a li inside of tier features is whitespace. Greater than is the direct descendent*/ 
         font-style: none;
         align-content: left;
         padding: 0.5rem 0;
         font-size: .9rem;
     }
-    .features-card ul{ /*Using a more subtle seperation instead of changing the dots to something else*/
-        align-content: left;
-        padding: 0.9rem .9rem;
-        border-top: 1px solid var(--border-color);
-        border-bottom: 1px solid var(--border-color);
-    }
     .features-card li::marker {/*Turns dots into empty*/
         content: "";
     }
-
     .features-button{
         display: flex;
-        padding: .5rem;
-        margin-top: auto; /*Aligns buttons on the bottom of the page in the same space on each card*/
-
+        margin-top: 2rem; /*Aligns buttons on the bottom of the page in the same space on each card when tied with min max*/
     }
     .popular-tag{
         position: absolute; /*Absolute to the relative position the parent has*/
@@ -202,13 +203,12 @@
     align-content: left;
     flex-direction: column;
     border: 5px solid var(--primary-text);
-    padding: 0 0 6rem 0;
-    margin: 3rem 24rem;
+    padding: 0rem 0rem 10rem 0rem;
+    margin: 3rem 32rem;
 }
 .form-label{
     font-size: 20px; 
-    margin: 2rem 3rem 0 3rem;
-
+    margin: 0rem 2rem 0 1rem;
 }
 .question-answer{
     display: flex;
@@ -216,8 +216,7 @@
     align-content: left;
 }
 .form-control{
-    display: flex;
-    justify-content: space-evenly;
+    height: 2rem;
 }
 .input-hint{
     margin: 0 0 2rem 0;
@@ -228,7 +227,8 @@
     display: flex;
     align-content: center;
     justify-content: space-around;
-    margin: 2rem 4rem;
+    margin: 8rem 4rem 0rem 4rem;
+
 }
 
 
