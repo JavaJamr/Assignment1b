@@ -12,7 +12,8 @@
         --border-color: rgba(0, 192, 235, 0.6);
         --main-background: #ffd698;
         --transition-speed:.2;
-    }
+}
+
     *, *::before, *::after{
     box-sizing: border-box;
     padding: 0;
@@ -27,7 +28,13 @@
     html{
         scroll-behavior: smooth;
         font-family: var(--font-family);
-        background-color: var(--main-background);
+        background:
+        radial-gradient( /*Applying A Universal Gradiant Color For My Background for a nice but consistant background*/
+            circle,
+            var(--features-background) 0%,
+            var(--main-background) 50%,
+            var(--hero-background) 100%
+        );
         color: var(--primary-text); /*Saves repeated calls to change text color by having a default*/
         /*Text Font Color*/
         line-height: 1.6;
@@ -62,14 +69,14 @@
         position: sticky;
         display: inline-flex;
         align-items: center;
-        background-color:var(---main-background);
+        /*background-color:var(---main-background);*/
     }
 
 /*Hero Section*/
     .hero-section{
         display: flex; /*Always apply to parent so the children will follow*/
         align-items: center;
-        background-color:var(--hero-background);
+        /*background-color:var(--hero-background);*/
         flex-direction: column;
         justify-content: space-between;
         padding: 5rem 0;
@@ -77,7 +84,7 @@
     .hero-title{
         display: flex;
         align-items: center;
-        background-color:var(--hero-background);
+        /*background-color:var(--hero-background);*/
 
     }
     .hero-information{
@@ -98,11 +105,14 @@
 
 /*Features Section Of The Page*/
     .features-section{
-        display: flex;
-        justify-content: space-evenly;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+        gap: 8rem;
+        align-items: stretch; /*on the cross axis it will pull the content and stretch it over all the space to fill the box*/
         background-color:var(--features-background);
-        border: 3px solid var(--border-color);
-        padding: 3rem 0;
+        border-top: 3px solid var(--border-color);
+        border-bottom: 3px solid var(--border-color);
+        padding: 2.5rem;
     }
     .features-card{
         background-color: var(--button-hover);
@@ -131,15 +141,32 @@
     }
     .features-card li{ /*if there is a li inside of tier features is whitespace. Greater than is the direct descendent*/ 
         font-style: none;
+        align-content: left;
         padding: 0.5rem 0;
         font-size: .9rem;
+    }
+    .features-card ul{ /*Using a more subtle seperation instead of changing the dots to something else*/
+        align-content: left;
+        padding: 0.9rem .9rem;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+    }
+    .features-card li::marker {/*Turns dots into empty*/
+        content: "";
+    }
+
+    .features-button{
+        display: flex;
+        padding: .5rem;
+        margin-top: auto; /*Aligns buttons on the bottom of the page in the same space on each card*/
+
     }
     .popular-tag{
         position: absolute; /*Absolute to the relative position the parent has*/
         top: -12px;
         left: 50%;
         transform: translateX(-50%);
-        background-color: var(--primary);
+        background-color: var(--primary-text);
         color: #FFF;
         font-size: 0.5rem;
         font-weight: 700px;
@@ -156,7 +183,7 @@
         
         justify-content: space-between;
 
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.5);
         padding: .75rem 0 0 0;
     }
     .header-footer-nav{
