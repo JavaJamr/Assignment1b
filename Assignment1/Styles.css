@@ -12,6 +12,7 @@
         --border-color: rgba(0, 192, 235, 0.6);
         --main-background: #ffd698;
         --transition-speed:.2;
+
 }
 
     *, *::before, *::after{
@@ -47,12 +48,13 @@
         text-decoration: none;
         display: flex;
         gap: .5rem;
-        color:var(--primary-text);
+        color:var(--primary-text); /*Overrides the wierd purple*/
     }
     .site-header{
         width: 100%; /*Fills enitre screen*/
         display: inline-flex; /*Always apply to parent so the children will follow*/
         position: sticky;      
+        flex-shrink: auto;
         top:0;  
         z-index: 1000; /*Z axis is important for layering*/    
         justify-content: space-between;
@@ -65,7 +67,7 @@
 
 /*Main Section*/
     .main-site{
-        display: flex; /*Always apply to parent so the children will follow*/
+        display: flex; 
         position: sticky;
         display: inline-flex;
         align-items: center;
@@ -73,7 +75,7 @@
 
 /*Hero Section*/
     .hero-section{
-        display: flex; /*Always apply to parent so the children will follow*/
+        display: flex; 
         align-items: center;
         flex-direction: column;
         justify-content: space-between;
@@ -86,7 +88,7 @@
     .hero-information{
         display: flex;
         justify-content: space-around;
-        flex-direction: row;/*Changes direction and due to divs becomes mroe like article*/
+        flex-direction: row; /*Changes direction and due to divs becomes aligns content left to right*/
         
     }
     .hero-text{
@@ -94,7 +96,7 @@
         border-radius: 3px var(--button);
         border: 2px solid var(--border-color);
         margin: 3rem;
-        height: auto;
+        height: 0 auto;
         width: 30%;
     }
     .hero-text h2{
@@ -107,7 +109,7 @@
 /*Features Section Of The Page*/
     .features-section{
         display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+        grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
         gap: 8rem;
         align-items: stretch; /*on the cross axis it will pull the content and stretch it over all the space to fill the box*/
         background-color:var(--features-background);
@@ -124,7 +126,7 @@
         transition: transform var(--transition-speed);
     }
     .features-card.recommended{
-        background-color: var(--button-CTA);
+        border: 1px solid var(--border-color);
         padding: 2.5rem 2rem;
         border-radius: 8px;
         display: flex;
@@ -135,8 +137,14 @@
     }
     .features-card:hover{
         transform: translateY(-4px);
-        border-color: var(--primary-text);
         border:1px solid var(--primary-text);
+    }
+    .features-card.recommended:hover{
+        transform: translateY(-4px);
+        border-color: var(--primary-text);
+        border:2px solid var(--primary-text);
+        transform: scale(1.03);
+
     }
     .features-card ul{ /*Using a more subtle seperation instead of changing the dots to something else*/
         align-content: left;
@@ -151,11 +159,12 @@
         padding: 0.5rem 0;
         font-size: .9rem;
     }
-    .features-card li::marker {/*Turns dots into empty*/
+    .features-card li::marker {/*Turns dots into empty Note: we could also use Before here*/
         content: "";
     }
     .features-button{
         display: flex;
+        flex-shrink: auto;
         margin-top: 2rem; /*Aligns buttons on the bottom of the page in the same space on each card when tied with min max*/
     }
     .popular-tag{
@@ -175,18 +184,20 @@
 /*Footer Syling*/
     .footer-site{
         width: 100%; /*Fills enitre screen*/
-        display: inline-flex; /*Always apply to parent so the children will follow*/
+        display: inline-flex; 
+        flex-shrink: auto;
         z-index: 1000; /*Z axis is important for layering*/
         
         justify-content: space-between;
 
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.5); /*Transparent Black*/
         padding: .75rem 0 0 0;
     }
     .header-footer-nav{
         justify-self: right;
         margin: 0 .5rem;
     }
+    
 /*Form Section*/
 .form-title{
     align-content: center;
@@ -200,7 +211,7 @@
     flex-direction: column;
     border: 5px solid var(--primary-text);
     padding: 0rem 0rem 10rem 0rem;
-    margin: 3% 33%;
+    margin: 3% 33%; /*Variable Margin For Different Screens*/
 }
 .form-label{
     font-size: 20px; 
@@ -224,12 +235,8 @@
     align-content: center;
     justify-content: space-around;
     margin: 8rem 4rem 0rem 4rem;
-
+    flex-shrink: auto;
 }
-
-
-
-
 
 
 /*Buttons*/
@@ -244,9 +251,9 @@
         font-size: 1rem;
         font-weight: 600; /*Bold is weight*/    
         text-decoration: none; /*Removes default styling*/
-        border-radius: 2px; /*Curvyness 50% is circle*/
+        border-radius: 2px; /*Curvyness*/
         border: 1px solid;
-        border-color: transparent; /*Transparent is not visible border*/
+        border-color: transparent; /*Transparent is not visible border yet*/
         cursor: pointer;
 
         transition: background-color var(--transition-speed), transform var(--transition-speed),border-color var(--border-color); 
@@ -278,3 +285,66 @@
         margin-bottom: 3rem;
         grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
     }
+    @media (max-width:768px){
+    :root{
+            --font-size:8px;
+        }
+    .hero-section{
+        display: flex; 
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0rem;
+    }
+    .hero-information{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column; /*Changes direction and due to divs becomes aligns content left to right*/
+    }
+    .hero-text{
+        padding: 0rem 0rem;
+        border-radius: 3px var(--button);
+        border: 2px solid var(--border-color);
+        margin: 0rem;
+        height: 0 auto;
+    }
+    .form-title{
+    align-content: center;
+    padding: 3rem 0;
+    font-weight: 800;
+}
+.form-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: left;
+    flex-direction: column;
+    border: 3px solid var(--primary-text);
+    padding: 0rem 0rem 2rem 0rem;
+    margin: 3% 33%; /*Variable Margin For Different Screens*/
+}
+.form-label{
+    font-size: 16px; 
+    margin: 0rem 1rem 0 .5rem;
+}
+.question-answer{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: left;
+}
+.form-control{
+    height: 2rem;
+    width: 2rem;
+}
+.input-hint{
+    margin: 0 0 1rem 0;
+    align-content: left;  
+    font-size: 6px;
+}
+.form-buttons{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    margin: 2rem 1rem 0rem 1rem;
+    flex-shrink: auto;
+}
+}
