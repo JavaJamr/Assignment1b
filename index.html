@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DevPulse | Cloud Infrastructure SaaS </title>
+        <!--CSS File Links-->
+        <link rel="stylesheet" href="Styles.css">
+    </head>
+
+    <!--Header Section-->
+    
+    <header id="header" class="site-header">
+        <!--Defines Logo-->
+        <a href="#" class="brand-logo" aria-label="Cloud Symbol">
+        <span class="logo-icon">&#9925</span>Cluster Cloud</a>
+        <nav class="header-footer-nav">
+            <a href="#features" class="btn">Compare Prices</a>
+            <a href="#pricing"class="btn">Simulation</a>
+            <a href="#pricing" class="btn CTA">Deploy Free Cluster</a>
+        </nav>
+    </header>
+
+    <main class="site-main">
+
+        <!--Hero-->
+        <section id="hero" class="hero-section"> 
+            <h1 class="hero-title">Core Value Metrics</h1>
+            <!--This many divs for the needed effect-->
+            <section class="hero-information">
+                <div class="hero-text">
+                    <h2>Latency Tracking</h2>
+                    <p>Cluster cloud tracks server latency for <b>free!</b> No purchase required for the first month after making an acount with us. Latency tracking has registered up to an average of <b>only 32 ms delay</b> which is the baseline as calculated using the American Standard testing servers.</p>
+                </div>
+                
+                <div class="hero-text">
+                    <h2>Log Aggregation</h2>
+                    <p>Easy to access and read logs for port hosting and forwarding through a personal, <b>searchable cloud database</b> that stores up to <b>900 days</b> of log data so you can trace back a problem from start to finish of your time with us!</p>
+                </div>
+                
+                <div class="hero-text">
+                    <h2>Auto-Remediation</h2>
+                    <p><b>Instantaneus</b> bot detection, with over 100,000 procedures and 32 layered security protocols to keep you servers safe from malicious hackers. Proven, and <b>100% reliable security</b></p>
+                </div>
+
+            </section>
+        <a href="#pricing" class="btn CTA hero-button">Start Your Free Trial Now</a> 
+        </section>
+<!--Compare Prices Div-->
+        <section id="features" class="section-header features-section"> 
+            <article class="features-card">
+                <h3>Developer</h3>
+                <p>$399 USD/month</p>
+
+                <ul class="tier-features">
+                    <li>Free 1 Month Trial Version</li>
+                    <li>Latency Tracking</li>
+                    <li>Log Aggregation</li>
+                    <li>Auto-Remediation</li>
+                    <li>10 nodes</li>
+                    <li>200 megabyte split throughput</li>
+
+                </ul>  
+                
+                <a href="#pricing" class="features-button btn CTA">Try Now</a>
+            </article> 
+
+            <article class="features-card recommended"> 
+                <div class="popular-tag">Most Popular</div>
+                <h3>Pro Cluster</h3>
+                <p>$1,999 USD/month</p>
+
+                <ul class="tier-features">
+                    <li>Latency Tracking</li>
+                    <li>Log Aggregation</li>
+                    <li>Auto-Remediation</li>
+                    <li>100 nodes</li>
+                    <li>1 gb dedicated throughput per node</li>
+                    <li>Advanced optimization tools</li>
+                </ul>
+                <a href="#pricing" class="features-button btn CTA">Buy Now</a>
+            </article>
+
+            <article class="features-card">
+                <h3>Enterprise Dedicated</h3>
+                <p>$4,999 USD/Month</p>
+
+                <ul class="tier-features">
+                    <li>Latency Tracking</li>
+                    <li>Log Aggregation</li>
+                    <li>Auto-Remediation</li>
+                    <li>Unlimited Nodes</li>
+                    <li>Best In Service Priority Throughput</li>
+                    <li>Advanced Optimization Tools</li>
+                    <li>Dedicated Service Agent</li>
+                </ul>
+                <a href="#pricing" class="features-button btn CTA">Invest Now</a>
+            </article>
+        </section>
+    
+        <!--buy button/simulation-->
+        <section id="pricing" class="section-header">
+
+             <form action="#" method="post" class="form-wrapper">
+                <h3 class="form-title">Your Server Requirements</h3>
+
+                <div class="question-answer">
+                <label for="number-of-nodes" class="form-label">Number Of Nodes*</label>
+                    <!--id is corrosponds to the form labels "for". name is the label the server will see-->
+                    <input
+                    type="number"
+                    name="numberOfNodes"
+                    id="number-of-nodes"
+                    class="form-control"
+                    min="1"
+                    max="1000000"
+                    step="1"
+                    placeholder="100"
+                    required>
+                </div>
+                    <span class="input-hint">min: 1 Node - max: 1,000,000 Nodes</span>
+
+                <div class="question-answer">
+                <label for="throughput" class="form-label">Throughput in kbit/s*</label>
+                    <!--id is corrosponds to the form labels "for". name is the label the server will see-->
+                    <input
+                    type="number"
+                    name="throughput"
+                    id="throughput"
+                    class="form-control"
+                    min="500"
+                    max="100000000"
+                    step="500"
+                    placeholder="10000"
+                    required>
+                </div>
+                    <span class="input-hint">min: 500KB/s (Half a megabyte) Node - max: 100,000,000,000 KB/s (100 Terra Bytes)</span>
+                
+                <div class="question-answer">
+                <label for="service-tier" class="form-label">Target Tier Selection</label>
+                    <select name="serviceTier" id="service-tier" class="form-control">
+                        <option value="developer-free">Free Trial</option>
+                        <option value="developer">Developer</option>
+                        <option value="pro-cluster">Pro Cluster</option>
+                        <option value="enterprise-dedicated">Enterprise Dedicated</option>
+                    </select>
+                </div>  
+
+            <!--Submission Buttons-->
+            <div class="form-buttons">
+            
+                <button class="btn">Simulate</button>
+                <button class="btn CTA">Buy Now</button>
+            </div>
+            </form>
+
+            
+        </section>
+    </main>
+    <!--Footer Section-->
+    <footer class="footer-site">
+        <!--May change to be different than header-->
+            <a href="#" class="brand-logo" aria-label="Cloud Symbol">
+            <span class="logo-icon">&#9925</span>Cluster Cloud</a>
+            <nav class="header-footer-nav"> 
+                <a href="#hero">Back To Top</a>
+                <a href="#features">Compare Prices</a>
+                <a href="#pricing">Simulation</a>
+                <a href="#pricing" class="btn CTA">Start You Trial Today</a>
+            </nav>
+            
+       
+    </footer>
+    
