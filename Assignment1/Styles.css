@@ -126,7 +126,7 @@
         transition: transform var(--transition-speed);
     }
     .features-card.recommended{
-        border: 1px solid var(--border-color);
+        border: 3px solid blue;
         padding: 2.5rem 2rem;
         border-radius: 8px;
         display: flex;
@@ -140,11 +140,8 @@
         border:1px solid var(--primary-text);
     }
     .features-card.recommended:hover{
-        transform: translateY(-4px);
-        border-color: var(--primary-text);
-        border:2px solid var(--primary-text);
+        border: 5px solid blue;
         transform: scale(1.03);
-
     }
     .features-card ul{ /*Using a more subtle seperation instead of changing the dots to something else*/
         align-content: left;
@@ -223,7 +220,7 @@
     align-content: left;
 }
 .form-control{
-    height: 2rem;
+    height: 3rem;
 }
 .input-hint{
     margin: 0 0 2rem 0;
@@ -320,7 +317,7 @@
     flex-direction: column;
     border: 3px solid var(--primary-text);
     padding: 0rem 0rem 2rem 0rem;
-    margin: 3% 33%; /*Variable Margin For Different Screens*/
+    margin: 3% 15%; /*Variable Margin For Different Screens*/
 }
 .form-label{
     font-size: 16px; 
@@ -332,8 +329,8 @@
     align-content: left;
 }
 .form-control{
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 6rem;
 }
 .input-hint{
     margin: 0 0 1rem 0;
@@ -347,4 +344,11 @@
     margin: 2rem 1rem 0rem 1rem;
     flex-shrink: auto;
 }
+    .hero-information{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column; /*Changes direction and due to divs becomes aligns content left to right*/
+        
+    }
 }
